@@ -1,0 +1,67 @@
+<div class="row montserrat">
+  <div class="col-lg-4 bg-dark text-center limit">
+    <div class="losange-padding">
+      <div class="losange">
+        <div class="los1">
+          <img src="{{profile.profile.image}}" width="147px">
+        </div>
+      </div>
+    </div>
+    <h1 class="bold">{{profile.profile.name}}</h1>
+    <p class="letter-space">{{profile.profile.profession}}</p>
+    <hr>
+    <h4 class="bold title-sidebar">PROFILE</h4>
+    <p>{{profile.profile.description}}</p>
+    <h4 class="bold title-sidebar">CONTACT</h4>
+    <br>
+    <span>{{profile.profile.contact.tel}}</span>
+    <br>
+    <span>{{profile.profile.contact.cel}}</span>
+    <br>  
+    <br>
+    <p>{{profile.profile.contact.address}}</p>
+    <br>
+    <span>{{profile.profile.contact.website}}</span>
+    <br>
+    <span>{{profile.profile.contact.mail}}</span>
+    <br>
+    <br>
+    <br>
+    <h4 class="bold title-sidebar">SKILLS</h4>
+    <br>
+    <br>
+    <div *ngFor="let skill of profile.profile.skills">
+      <p>{{skill.name}}</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width]="skill.value" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="col-lg-8 padding-55 font-black">
+    <div class="row justify-content-lg-center">
+      <div class="col-lg-11">
+        <h4 class="bold title">WORK EXPERIENCE</h4>
+        <br>
+        <div *ngFor="let experience of profile.profile.experience">
+          <h5 class="bold">{{experience.name}}</h5>
+          <p class="period">{{experience.date}}</p>
+          <span class="description">{{experience.description}}</span>
+          <br>
+          <br>
+        </div>
+        <br>
+        <h4 class="bold title">EDUCATION</h4>
+        <br>
+        <div *ngFor="let education of profile.profile.education">
+          <h5 class="bold">{{education.name}}</h5>
+          <p class="period">{{education.date}}</p>
+          <span class="description">{{education.description}}</span>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
